@@ -34,7 +34,7 @@
                <ul>
                  <li><a href="https://docs.ogc.org/dis/21-056r10/21-056r10.html">OGC GeoPose 1.0 Data Exchange Draft Standard (OGC 21-056r10)</a></li>
                </ul>
-               <p>Tests for the following conformance classes specified in OGC 21-056r10 are implemented:</p>
+               <p>The following conformance tests specified in OGC 21-056r10 are implemented:</p>
                <ul>
                  <li>/conf/basic-ypr-encoding-json/definition, Conformance test A.37</li>
                  <li>/conf/basic-quaternion-encoding-json/definition, Conformance test A.38</li>
