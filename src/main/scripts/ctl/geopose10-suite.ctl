@@ -32,14 +32,13 @@
              <div style="background:#F0F8FF" bgcolor="#F0F8FF">
                <p>The implementation under test (IUT) is checked against the following specifications:</p>
                <ul>
-                 <li><a href="http://www.w3.org/TR/xml/">Extensible Markup Language (XML) 1.0</a>, 
-				 Fifth Edition</li>
-				 <li><a href="http://www.w3.org/TR/xmlbase/">XML Base</a>, Second Edition</li>
+                 <li><a href="https://docs.ogc.org/dis/21-056r10/21-056r10.html">OGC GeoPose 1.0 Data Exchange Draft Standard (OGC 21-056r10)</a></li>
                </ul>
-               <p>Two conformance levels are defined:</p>
+               <p>Tests for the following conformance classes specified in OGC 21-056r10 are implemented:</p>
                <ul>
-                 <li>Level 1</li>
-                 <li>Level 2</li>
+                 <li>/conf/basic-ypr-encoding-json/definition, Conformance test A.37</li>
+                 <li>/conf/basic-quaternion-encoding-json/definition, Conformance test A.38</li>
+                 <li>/conf/advanced-encoding-json/definition, Conformance test A.40</li>
                </ul>
              </div>
              <fieldset style="background:#ccffff">
