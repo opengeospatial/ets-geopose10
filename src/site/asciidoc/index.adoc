@@ -4,8 +4,7 @@
 
 This executable test suite (ETS) verifies the conformance of the implementation under test (IUT) with respect to the OGC GeoPose 1.0 Data Exchange Draft Standard. Conformance testing is a kind of "black box" testing that examines the externally visible characteristics or behaviors of the IUT while disregarding any implementation details.
 
-Several conformance classes are defined in the principal specification; the ones
-listed below are covered by this test suite:
+The following conformance tests are implemented:
 
 * /conf/basic-ypr-encoding-json/definition, Conformance test A.37
 * /conf/basic-quaternion-encoding-json/definition, Conformance test A.38
