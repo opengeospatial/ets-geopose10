@@ -46,18 +46,25 @@
                <legend style="font-family: sans-serif; color: #000099; 
 			                 background-color:#F0F8FF; border-style: solid; 
                        border-width: medium; padding:4px">Implementation under test</legend>
+
                <p>
-                 <label for="uri">
-                   <h4 style="margin-bottom: 0.5em">Location of IUT (absolute http: or file: URI)</h4>
+                 <label for="doc_basicypr">
+                   <h4 style="margin-bottom: 0.5em">Upload Basic YPR file</h4>
                  </label>
-                 <input id="uri" name="uri" size="128" type="text" value="http://www.w3schools.com/xml/note.xml" />
+                 <input name="doc_basicypr" id="doc_basicypr" size="128" type="file" />
                </p>
-               <p>
-                 <label for="doc">
-                   <h4 style="margin-bottom: 0.5em">Upload IUT</h4>
-                 </label>
-                 <input name="doc" id="doc" size="128" type="file" />
-               </p>
+				<p>
+				  <label for="doc_basicquaternion">
+				    <h4 style="margin-bottom: 0.5em">Upload Basic Quaternion file</h4>
+				  </label>
+				  <input name="doc_basicquaternion" id="doc_basicquaternion" size="128" type="file" />
+				</p>     
+				<p>
+				  <label for="doc_advanced">
+				    <h4 style="margin-bottom: 0.5em">Upload Advanced file</h4>
+				  </label>
+				  <input name="doc_advanced" id="doc_advanced" size="128" type="file" />
+				</p>				          
                <p>
                  <label for="level">Conformance class: </label>
                  <input id="level-1" type="radio" name="level" value="1" checked="checked" />
@@ -72,19 +79,14 @@
              </p>
            </ctl:form>
         </xsl:variable>
-        <xsl:variable name="iut-file" select="$form-data//value[@key='doc']/ctl:file-entry/@full-path" />
+        <xsl:variable name="iut-file-basicypr" select="$form-data//value[@key='doc_basicypr']/ctl:file-entry/@full-path" />
+        <xsl:variable name="iut-file-basicquaternion" select="$form-data//value[@key='doc_basicquaternion']/ctl:file-entry/@full-path" />
+        <xsl:variable name="iut-file-advanced" select="$form-data//value[@key='doc_advanced']/ctl:file-entry/@full-path" />
 	      <xsl:variable name="test-run-props">
 		    <properties version="1.0">
-          <entry key="iut">
-            <xsl:choose>
-              <xsl:when test="empty($iut-file)">
-                <xsl:value-of select="normalize-space($form-data/values/value[@key='uri'])"/>
-              </xsl:when>
-              <xsl:otherwise>
-                <xsl:copy-of select="concat('file:///', $iut-file)" />
-              </xsl:otherwise>
-            </xsl:choose>
-          </entry>
+          <entry key="basicypr"><xsl:copy-of select="concat('file:///', $iut-file-basicypr)" /></entry>
+          <entry key="basicquaternion"><xsl:copy-of select="concat('file:///', $iut-file-basicquaternion)" /></entry>
+          <entry key="advanced"><xsl:copy-of select="concat('file:///', $iut-file-advanced)" /></entry>
           <entry key="ics"><xsl:value-of select="$form-data/values/value[@key='level']"/></entry>
 		    </properties>
 		   </xsl:variable>

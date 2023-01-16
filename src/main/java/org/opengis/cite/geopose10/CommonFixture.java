@@ -49,7 +49,7 @@ public class CommonFixture {
         if (null != obj) {
             this.client = Client.class.cast(obj);
         }
-        obj = testContext.getSuite().getAttribute(SuiteAttribute.TEST_SUBJECT.getName());
+        obj = testContext.getSuite().getAttribute(SuiteAttribute.BASICYPR_TEST_SUBJ_FILE.getName());
         if (null == obj) {
             throw new SkipException("Test subject not found in ITestContext.");
         }
