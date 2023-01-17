@@ -35,4 +35,9 @@
       <class name="org.opengis.cite.geopose10.encodings.json.Graph" />
     </classes>
   </test>    
+  <test name="Series Regular">
+    <classes>
+      <class name="org.opengis.cite.geopose10.encodings.json.SeriesRegular" />
+    </classes>
+  </test>     
 </suite>

@@ -143,6 +143,23 @@ public class SuiteFixtureListener implements ISuiteListener {
         TestSuiteLogger.log( Level.FINE, String.format( "Wrote test subject to file: %s (%d bytes)",
                                                         graphEntityFile.getAbsolutePath(), graphEntityFile.length() ) );
         suite.setAttribute(SuiteAttribute.GRAPH_TEST_SUBJ_FILE.getName(), graphEntityFile);          
+        
+      //------SeriesRegular
+
+        String seriesregularParam = params.get(TestRunArg.SERIESREGULAR.toString());
+        if ((null == seriesregularParam) || seriesregularParam.isEmpty()) {
+            throw new IllegalArgumentException("Required test run parameter not found: " + TestRunArg.SERIESREGULAR.toString());
+        }
+        URI seriesregularRef = URI.create(seriesregularParam.trim());
+        File seriesregularEntityFile = null;
+        try {
+            seriesregularEntityFile = URIUtils.dereferenceURI( seriesregularRef );
+        } catch ( IOException ioxc ) {
+            throw new RuntimeException( "Failed to dereference resource located at " + seriesregularRef, ioxc );
+        }
+        TestSuiteLogger.log( Level.FINE, String.format( "Wrote test subject to file: %s (%d bytes)",
+                                                        seriesregularEntityFile.getAbsolutePath(), seriesregularEntityFile.length() ) );
+        suite.setAttribute(SuiteAttribute.SERIESREGULAR_TEST_SUBJ_FILE.getName(), seriesregularEntityFile);           
     }
 
     /**

@@ -25,6 +25,7 @@ public enum SuiteAttribute {
      * A File containing the test subject or a description of it.
      */
     TEST_SUBJ_FILE("testSubjectFile", File.class),
+    SERIESREGULAR_TEST_SUBJ_FILE("seriesRegularTestSubjectFile", File.class),  
     GRAPH_TEST_SUBJ_FILE("graphTestSubjectFile", File.class),    
     CHAIN_TEST_SUBJ_FILE("chainTestSubjectFile", File.class),    
     ADVANCED_TEST_SUBJ_FILE("advancedTestSubjectFile", File.class),    
