@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
   "description": "Regular Series: Regular GeoPose time series with constant inter-pose duration.",
   "definitions": {
     "FrameSpecification": {

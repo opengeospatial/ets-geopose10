@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
   "description": "Composite: StreamHeader - appears once at the beginning of a stream.",
   "definitions": {
     "FrameSpecification": {

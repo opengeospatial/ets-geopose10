@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
   "description": "Graph: An general structure modelling the pose relationship between frames (nodes) and transforms (edges) in a graph structure.",
   "definitions": {
     "FrameSpecification": {
