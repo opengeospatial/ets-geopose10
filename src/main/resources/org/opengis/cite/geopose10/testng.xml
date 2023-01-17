@@ -30,4 +30,9 @@
       <class name="org.opengis.cite.geopose10.encodings.json.Chain" />
     </classes>
   </test>   
+  <test name="Graph">
+    <classes>
+      <class name="org.opengis.cite.geopose10.encodings.json.Graph" />
+    </classes>
+  </test>    
 </suite>

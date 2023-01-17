@@ -10,9 +10,10 @@ public enum TestRunArg {
      * metadata about it.
      */
     IUT,
-    BASICQuaternion,
-    ADVANCED,
+    GRAPH,
     CHAIN,
+    ADVANCED,
+    BASICQuaternion,
 	BASICYPR;
 
     @Override
