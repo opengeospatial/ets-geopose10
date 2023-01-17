@@ -74,7 +74,9 @@ public class BasicQuaternion extends CommonFixture {
     	
     	System.out.println("validateByBasicQuaternionSchema() "+testSubject);
     	
-    	if(!testSubject.isFile()) throw new SkipException("No file selected");
+    	if(!testSubject.isFile()) {
+    		Assert.assertTrue(testSubject.isFile(),"No file selected");
+    	}
     	
     	StringBuffer errorMessages = new StringBuffer();
     	

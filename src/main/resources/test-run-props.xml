@@ -5,5 +5,6 @@
     <entry key="basicypr">file:///Users/ogckm/Documents/GitHub/ets-geopose10/src/test/resources/sample2_BasicEuler.json</entry>
     <entry key="basicquaternion">file:///Users/ogckm/Documents/GitHub/ets-geopose10/src/test/resources/sample3_BasicQuaternion.json</entry>
     <entry key="advanced">file:///Users/ogckm/Documents/GitHub/ets-geopose10/src/test/resources/sample4_Advanced.json</entry>
+    <entry key="chain">file:///Users/ogckm/Documents/GitHub/ets-geopose10/src/test/resources/sample5_Chain.json</entry>
     <entry key="ics">class-A,class-B</entry>
 </properties>

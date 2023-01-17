@@ -32,7 +32,7 @@ import com.networknt.schema.SpecVersion;
 import com.networknt.schema.SpecVersionDetector;
 import com.networknt.schema.ValidationMessage;
 
-public class Advanced extends CommonFixture {
+public class Chain extends CommonFixture {
     private File testSubject;
 
     /**
@@ -47,7 +47,7 @@ public class Advanced extends CommonFixture {
     public void obtainTestSubject(ITestContext testContext) {
     	System.out.println("obtainTestSubject");
         Object obj = testContext.getSuite().getAttribute(
-                SuiteAttribute.ADVANCED_TEST_SUBJ_FILE.getName());
+                SuiteAttribute.CHAIN_TEST_SUBJ_FILE.getName());
   
         this.testSubject = (File) obj;
         
@@ -65,19 +65,19 @@ public class Advanced extends CommonFixture {
     }
 
     /**
-     * Implements Conformance test A.40: Verify conformance via JSON schema
-     * Validate the JSON data against the Advanced JSON-Schema 2019-9 definition
+     * Implements Conformance test A.42: Verify conformance via JSON schema
+     * Validate the JSON data against the GeoPose Chain JSON-Schema 2019-9 definition 
      */
-    @Test(description = "Implements Conformance test A.40: Verify conformance via JSON schema (/conf/advanced-encoding-json/definition)")
-    public void validateByAdvancedSchema() {
-    	System.out.println("validateByAdvancedSchema() "+testSubject);
+    @Test(description = "Implements Conformance test A.42: Verify conformance via JSON schema (/conf/chain-encoding-json/definition)")
+    public void validateByChainSchema() {
+    	System.out.println("validateByChainSchema() "+testSubject);
     	
     	if(!testSubject.isFile()) {
     		Assert.assertTrue(testSubject.isFile(),"No file selected");
     	}
     	
     	BaseJsonSchemaValidatorTest tester = new BaseJsonSchemaValidatorTest();
-	      String schemaToApply = "/org/opengis/cite/geopose10/jsonschema/GeoPose.Advanced.Schema.json";
+	      String schemaToApply = "/org/opengis/cite/geopose10/jsonschema/GeoPose.Composite.Chain.Schema.json";
 	  	
 	        boolean valid = false;
 	        StringBuffer sb = new StringBuffer();

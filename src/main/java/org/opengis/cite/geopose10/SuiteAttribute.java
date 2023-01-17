@@ -26,6 +26,7 @@ public enum SuiteAttribute {
      */
     TEST_SUBJ_FILE("testSubjectFile", File.class),
     BASICQUATERNION_TEST_SUBJ_FILE("basicQuaternionTestSubjectFile", File.class),
+    CHAIN_TEST_SUBJ_FILE("chainTestSubjectFile", File.class),
     ADVANCED_TEST_SUBJ_FILE("advancedTestSubjectFile", File.class),
     BASICYPR_TEST_SUBJ_FILE("basicYPRTestSubjectFile", File.class);
 	

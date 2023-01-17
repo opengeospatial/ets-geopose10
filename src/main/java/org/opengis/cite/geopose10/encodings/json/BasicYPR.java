@@ -72,7 +72,9 @@ public class BasicYPR extends CommonFixture {
     public void validateByBasicYprSchema() {
     	System.out.println("validateByBasicYprSchema() "+testSubject);
     	
-    	if(!testSubject.isFile()) throw new SkipException("No file selected");
+    	if(!testSubject.isFile()) {
+    		Assert.assertTrue(testSubject.isFile(),"No file selected");
+    	}
     	
     	BaseJsonSchemaValidatorTest tester = new BaseJsonSchemaValidatorTest();
 	      String schemaToApply = "/org/opengis/cite/geopose10/jsonschema/GeoPose.Basic.YPR.Schema.json";

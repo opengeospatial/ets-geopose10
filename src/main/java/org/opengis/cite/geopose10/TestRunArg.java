@@ -12,6 +12,7 @@ public enum TestRunArg {
     IUT,
     BASICQuaternion,
     ADVANCED,
+    CHAIN,
 	BASICYPR;
 
     @Override
