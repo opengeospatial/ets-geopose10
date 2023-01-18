@@ -88,6 +88,12 @@
   					</label>
   					<input name="doc_streamelement" id="doc_streamelement" size="128" type="file" />
 				</p>	
+				<p>
+				    <label for="doc_streamheader">
+				    <h4 style="margin-bottom: 0.5em">Upload Stream Header file</h4>
+				    </label>
+				    <input name="doc_streamheader" id="doc_streamheader" size="128" type="file" />
+				</p>				
              </fieldset>
              <p>
                <input class="form-button" type="submit" value="Start"/> | 
@@ -102,6 +108,7 @@
         <xsl:variable name="iut-file-graph" select="$form-data//value[@key='doc_graph']/ctl:file-entry/@full-path" />     
         <xsl:variable name="iut-file-seriesregular" select="$form-data//value[@key='doc_seriesregular']/ctl:file-entry/@full-path" />   
         <xsl:variable name="iut-file-streamelement" select="$form-data//value[@key='doc_streamelement']/ctl:file-entry/@full-path" /> 
+		<xsl:variable name="iut-file-streamheader" select="$form-data//value[@key='doc_streamheader']/ctl:file-entry/@full-path" />         
 	      <xsl:variable name="test-run-props">
 		    <properties version="1.0">
           <entry key="basicypr"><xsl:copy-of select="concat('file:///', $iut-file-basicypr)" /></entry>
@@ -110,7 +117,8 @@
           <entry key="chain"><xsl:copy-of select="concat('file:///', $iut-file-chain)" /></entry>
           <entry key="graph"><xsl:copy-of select="concat('file:///', $iut-file-graph)" /></entry>  
           <entry key="seriesregular"><xsl:copy-of select="concat('file:///', $iut-file-seriesregular)" /></entry>     
-          <entry key="streamelement"><xsl:copy-of select="concat('file:///', $iut-file-streamelement)" /></entry>    
+          <entry key="streamelement"><xsl:copy-of select="concat('file:///', $iut-file-streamelement)" /></entry>   
+          <entry key="streamheader"><xsl:copy-of select="concat('file:///', $iut-file-streamheader)" /></entry>  
           <entry key="ics"><xsl:value-of select="$form-data/values/value[@key='level']"/></entry>
 		    </properties>
 		   </xsl:variable>

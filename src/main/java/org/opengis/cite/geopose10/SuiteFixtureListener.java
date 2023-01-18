@@ -180,7 +180,24 @@ public class SuiteFixtureListener implements ISuiteListener {
         }
         TestSuiteLogger.log( Level.FINE, String.format( "Wrote test subject to file: %s (%d bytes)",
                                                         streamelementEntityFile.getAbsolutePath(), streamelementEntityFile.length() ) );
-        suite.setAttribute(SuiteAttribute.STREAMELEMENT_TEST_SUBJ_FILE.getName(), streamelementEntityFile);         
+        suite.setAttribute(SuiteAttribute.STREAMELEMENT_TEST_SUBJ_FILE.getName(), streamelementEntityFile);  
+        
+      //------StreamHeader
+
+        String streamheaderParam = params.get(TestRunArg.STREAMHEADER.toString());
+        if ((null == streamheaderParam) || streamheaderParam.isEmpty()) {
+            throw new IllegalArgumentException("Required test run parameter not found: " + TestRunArg.STREAMHEADER.toString());
+        }
+        URI streamheaderRef = URI.create(streamheaderParam.trim());
+        File streamheaderEntityFile = null;
+        try {
+            streamheaderEntityFile = URIUtils.dereferenceURI( streamheaderRef );
+        } catch ( IOException ioxc ) {
+            throw new RuntimeException( "Failed to dereference resource located at " + streamheaderRef, ioxc );
+        }
+        TestSuiteLogger.log( Level.FINE, String.format( "Wrote test subject to file: %s (%d bytes)",
+                                                        streamheaderEntityFile.getAbsolutePath(), streamheaderEntityFile.length() ) );
+        suite.setAttribute(SuiteAttribute.STREAMHEADER_TEST_SUBJ_FILE.getName(), streamheaderEntityFile);         
     }
 
     /**

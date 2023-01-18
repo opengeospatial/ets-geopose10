@@ -44,5 +44,10 @@
     <classes>
       <class name="org.opengis.cite.geopose10.encodings.json.StreamElement" />
     </classes>
-  </test>     
+  </test>    
+  <test name="Stream Header">
+  <classes>
+    <class name="org.opengis.cite.geopose10.encodings.json.StreamHeader" />
+  </classes>
+</test>   
 </suite>
