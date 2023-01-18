@@ -65,10 +65,10 @@ public class Graph extends CommonFixture {
     }
 
     /**
-     * Implements Conformance test A.42: Verify conformance via JSON schema
-     * Validate the JSON data against the GeoPose Graph JSON-Schema 2019-9 definition 
+     * Implements Conformance test A.41: Verify conformance via JSON schema
+     * Validate the JSON data against the GeoPose Graph JSON-Schema 2019-9 definition
      */
-    @Test(description = "Implements Conformance test A.42: Verify conformance via JSON schema (/conf/graph-encoding-json/definition)")
+    @Test(description = "Implements Conformance test A.41: Verify conformance via JSON schema (/conf/graph-encoding-json/definition)")
     public void validateByGraphSchema() {
     	System.out.println("validateByGraphSchema() "+testSubject);
     	
