@@ -42,9 +42,9 @@
   </test>   
   <test name="Stream SDU JSON">
     <classes>
-      <class name="org.opengis.cite.geopose10.encodings.json.StreamElement" />
-
-    <class name="org.opengis.cite.geopose10.encodings.json.StreamHeader" />
+     <class name="org.opengis.cite.geopose10.encodings.json.StreamElement" />
+     <class name="org.opengis.cite.geopose10.encodings.json.StreamHeader" />
+     <class name="org.opengis.cite.geopose10.encodings.json.StreamRecord" />
   </classes>
 </test>   
 </suite>

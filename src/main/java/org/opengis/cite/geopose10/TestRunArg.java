@@ -10,6 +10,7 @@ public enum TestRunArg {
      * metadata about it.
      */
     IUT,
+    STREAMRECORD,
     STREAMHEADER,
     STREAMELEMENT,
     SERIESREGULAR,
