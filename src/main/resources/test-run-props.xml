@@ -8,5 +8,6 @@
     <entry key="chain">file:///Users/ogckm/Documents/GitHub/ets-geopose10/src/test/resources/sample5_Chain.json</entry>
     <entry key="graph">file:///Users/ogckm/Documents/GitHub/ets-geopose10/src/test/resources/sample6_Graph.json</entry>
     <entry key="seriesregular">file:///Users/ogckm/Documents/GitHub/ets-geopose10/src/test/resources/sample7_SeriesRegular.json</entry>
+    <entry key="streamelement">file:///Users/ogckm/Documents/GitHub/ets-geopose10/src/test/resources/sample8_StreamElement.json</entry>
     <entry key="ics">class-A,class-B</entry>
 </properties>

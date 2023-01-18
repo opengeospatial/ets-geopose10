@@ -68,7 +68,7 @@
 				  <label for="doc_chain">
 				    <h4 style="margin-bottom: 0.5em">Upload Chain file</h4>
 				  </label>
-				  <input name="doc_chain" id="doc_advanced" size="128" type="file" />
+				  <input name="doc_chain" id="doc_chain" size="128" type="file" />
 				</p>								          
 				<p>
 				  <label for="doc_graph">
@@ -81,7 +81,13 @@
 				    <h4 style="margin-bottom: 0.5em">Upload Regular Series file</h4>
 				  </label>
 				  <input name="doc_seriesregular" id="doc_seriesregular" size="128" type="file" />
-				</p>				
+				</p>		
+				<p>
+  					<label for="doc_streamelement">
+    				<h4 style="margin-bottom: 0.5em">Upload Stream Element file</h4>
+  					</label>
+  					<input name="doc_streamelement" id="doc_streamelement" size="128" type="file" />
+				</p>	
              </fieldset>
              <p>
                <input class="form-button" type="submit" value="Start"/> | 
@@ -94,7 +100,8 @@
         <xsl:variable name="iut-file-advanced" select="$form-data//value[@key='doc_advanced']/ctl:file-entry/@full-path" />
         <xsl:variable name="iut-file-chain" select="$form-data//value[@key='doc_chain']/ctl:file-entry/@full-path" />
         <xsl:variable name="iut-file-graph" select="$form-data//value[@key='doc_graph']/ctl:file-entry/@full-path" />     
-        <xsl:variable name="iut-file-seriesregular" select="$form-data//value[@key='doc_seriesregular']/ctl:file-entry/@full-path" />    
+        <xsl:variable name="iut-file-seriesregular" select="$form-data//value[@key='doc_seriesregular']/ctl:file-entry/@full-path" />   
+        <xsl:variable name="iut-file-streamelement" select="$form-data//value[@key='doc_streamelement']/ctl:file-entry/@full-path" /> 
 	      <xsl:variable name="test-run-props">
 		    <properties version="1.0">
           <entry key="basicypr"><xsl:copy-of select="concat('file:///', $iut-file-basicypr)" /></entry>
@@ -102,7 +109,8 @@
           <entry key="advanced"><xsl:copy-of select="concat('file:///', $iut-file-advanced)" /></entry>
           <entry key="chain"><xsl:copy-of select="concat('file:///', $iut-file-chain)" /></entry>
           <entry key="graph"><xsl:copy-of select="concat('file:///', $iut-file-graph)" /></entry>  
-          <entry key="seriesregular"><xsl:copy-of select="concat('file:///', $iut-file-seriesregular)" /></entry>        
+          <entry key="seriesregular"><xsl:copy-of select="concat('file:///', $iut-file-seriesregular)" /></entry>     
+          <entry key="streamelement"><xsl:copy-of select="concat('file:///', $iut-file-streamelement)" /></entry>    
           <entry key="ics"><xsl:value-of select="$form-data/values/value[@key='level']"/></entry>
 		    </properties>
 		   </xsl:variable>

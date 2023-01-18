@@ -39,5 +39,10 @@
     <classes>
       <class name="org.opengis.cite.geopose10.encodings.json.SeriesRegular" />
     </classes>
+  </test>   
+  <test name="Stream Element">
+    <classes>
+      <class name="org.opengis.cite.geopose10.encodings.json.StreamElement" />
+    </classes>
   </test>     
 </suite>

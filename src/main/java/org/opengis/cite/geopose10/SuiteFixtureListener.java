@@ -157,9 +157,30 @@ public class SuiteFixtureListener implements ISuiteListener {
         } catch ( IOException ioxc ) {
             throw new RuntimeException( "Failed to dereference resource located at " + seriesregularRef, ioxc );
         }
+        
+        System.out.println(String.format( "Wrote test subject to file: %s (%d bytes)",
+                seriesregularEntityFile.getAbsolutePath(), seriesregularEntityFile.length() ));
+        
         TestSuiteLogger.log( Level.FINE, String.format( "Wrote test subject to file: %s (%d bytes)",
                                                         seriesregularEntityFile.getAbsolutePath(), seriesregularEntityFile.length() ) );
-        suite.setAttribute(SuiteAttribute.SERIESREGULAR_TEST_SUBJ_FILE.getName(), seriesregularEntityFile);           
+        suite.setAttribute(SuiteAttribute.SERIESREGULAR_TEST_SUBJ_FILE.getName(), seriesregularEntityFile);    
+        
+      //------StreamElement
+
+        String streamelementParam = params.get(TestRunArg.STREAMELEMENT.toString());
+        if ((null == streamelementParam) || streamelementParam.isEmpty()) {
+            throw new IllegalArgumentException("Required test run parameter not found: " + TestRunArg.STREAMELEMENT.toString());
+        }
+        URI streamelementRef = URI.create(streamelementParam.trim());
+        File streamelementEntityFile = null;
+        try {
+            streamelementEntityFile = URIUtils.dereferenceURI( streamelementRef );
+        } catch ( IOException ioxc ) {
+            throw new RuntimeException( "Failed to dereference resource located at " + streamelementRef, ioxc );
+        }
+        TestSuiteLogger.log( Level.FINE, String.format( "Wrote test subject to file: %s (%d bytes)",
+                                                        streamelementEntityFile.getAbsolutePath(), streamelementEntityFile.length() ) );
+        suite.setAttribute(SuiteAttribute.STREAMELEMENT_TEST_SUBJ_FILE.getName(), streamelementEntityFile);         
     }
 
     /**
