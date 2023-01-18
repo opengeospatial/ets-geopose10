@@ -65,10 +65,10 @@ public class StreamRecord extends CommonFixture {
     }
 
     /**
-     * Implements Conformance test A.42: Verify conformance via JSON schema
-     * Validate the JSON data against the GeoPose StreamRecord JSON-Schema 2019-9 definition 
+     * Implements Conformance test A.47: Verify Stream Record conformance to JSON schema
+     * Validate the JSON data against the GeoPose Stream Record JSON-Schema 2019-9 definition
      */
-    @Test(description = "Implements Conformance test A.42: Verify conformance via JSON schema (/conf/streamrecord-encoding-json/definition)")
+    @Test(description = "Implements Conformance test A.47: Verify Stream Record conformance to JSON schema (/conf/stream-encoding-json/record)")
     public void validateByStreamRecordSchema() {
     	
     	

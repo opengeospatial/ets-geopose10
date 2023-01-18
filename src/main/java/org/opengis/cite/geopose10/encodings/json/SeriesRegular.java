@@ -68,7 +68,7 @@ public class SeriesRegular extends CommonFixture {
      * Implements Conformance test A.43: Verify conformance via JSON schema
      * Validate the JSON data against the GeoPose Regular Series JSON-Schema 2019-9 definition
      */
-    @Test(description = "Implements Conformance test A.43: Verify conformance via JSON schema (/conf/series-regular-encoding-json/definition)")
+    @Test(description = "Implements Conformance test A.43: Verify conformance via JSON schema (	/conf/series-regular-encoding-json/definition)")
     public void validateBySeriesRegularSchema() {
     	
     	

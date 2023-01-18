@@ -68,7 +68,7 @@ public class StreamHeader extends CommonFixture {
      * Implements Conformance test A.42: Verify conformance via JSON schema
      * Validate the JSON data against the GeoPose StreamHeader JSON-Schema 2019-9 definition 
      */
-    @Test(description = "Implements Conformance test A.42: Verify conformance via JSON schema (/conf/streamheader-encoding-json/definition)")
+    @Test(description = "Implements Conformance test A.42: Verify conformance via JSON schema (/conf/stream-encoding-json/header)")
     public void validateByStreamHeaderSchema() {
     	
     	
