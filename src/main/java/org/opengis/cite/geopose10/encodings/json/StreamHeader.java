@@ -45,7 +45,7 @@ public class StreamHeader extends CommonFixture {
      */
     @BeforeClass
     public void obtainTestSubject(ITestContext testContext) {
-    	System.out.println("obtainTestSubject");
+   
         Object obj = testContext.getSuite().getAttribute(
                 SuiteAttribute.STREAMHEADER_TEST_SUBJ_FILE.getName());
   
@@ -70,7 +70,7 @@ public class StreamHeader extends CommonFixture {
      */
     @Test(description = "Implements Conformance test A.42: Verify conformance via JSON schema (/conf/streamheader-encoding-json/definition)")
     public void validateByStreamHeaderSchema() {
-    	System.out.println("validateByStreamHeaderSchema() "+testSubject);
+    	
     	
     	if(!testSubject.isFile()) {
     		Assert.assertTrue(testSubject.isFile(),"No file selected");

@@ -45,7 +45,7 @@ public class BasicQuaternion extends CommonFixture {
      */
     @BeforeClass
     public void obtainTestSubject(ITestContext testContext) {
-    	System.out.println("obtainTestSubject");
+    
         Object obj = testContext.getSuite().getAttribute(
                 SuiteAttribute.BASICQUATERNION_TEST_SUBJ_FILE.getName());
   
@@ -72,7 +72,7 @@ public class BasicQuaternion extends CommonFixture {
     @Test(description = "Implements Conformance test A.39: Verify conformance via JSON schema (/conf/basic-quaternion-encoding-json/definition)")
     public void validateByBasicQuaternionSchema() {
     	
-    	System.out.println("validateByBasicQuaternionSchema() "+testSubject);
+    
     	
     	if(!testSubject.isFile()) {
     		Assert.assertTrue(testSubject.isFile(),"No file selected");

@@ -45,7 +45,7 @@ public class StreamRecord extends CommonFixture {
      */
     @BeforeClass
     public void obtainTestSubject(ITestContext testContext) {
-    	System.out.println("obtainTestSubject");
+  
         Object obj = testContext.getSuite().getAttribute(
                 SuiteAttribute.STREAMRECORD_TEST_SUBJ_FILE.getName());
   
@@ -70,7 +70,7 @@ public class StreamRecord extends CommonFixture {
      */
     @Test(description = "Implements Conformance test A.42: Verify conformance via JSON schema (/conf/streamrecord-encoding-json/definition)")
     public void validateByStreamRecordSchema() {
-    	System.out.println("validateByStreamRecordSchema() "+testSubject);
+    	
     	
     	if(!testSubject.isFile()) {
     		Assert.assertTrue(testSubject.isFile(),"No file selected");

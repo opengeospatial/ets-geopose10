@@ -45,7 +45,7 @@ public class Chain extends CommonFixture {
      */
     @BeforeClass
     public void obtainTestSubject(ITestContext testContext) {
-    	System.out.println("obtainTestSubject");
+    	
         Object obj = testContext.getSuite().getAttribute(
                 SuiteAttribute.CHAIN_TEST_SUBJ_FILE.getName());
   
@@ -70,7 +70,7 @@ public class Chain extends CommonFixture {
      */
     @Test(description = "Implements Conformance test A.42: Verify conformance via JSON schema (/conf/chain-encoding-json/definition)")
     public void validateByChainSchema() {
-    	System.out.println("validateByChainSchema() "+testSubject);
+    	
     	
     	if(!testSubject.isFile()) {
     		Assert.assertTrue(testSubject.isFile(),"No file selected");

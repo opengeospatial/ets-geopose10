@@ -45,7 +45,7 @@ public class SeriesRegular extends CommonFixture {
      */
     @BeforeClass
     public void obtainTestSubject(ITestContext testContext) {
-    	System.out.println("obtainTestSubject");
+    
         Object obj = testContext.getSuite().getAttribute(
                 SuiteAttribute.SERIESREGULAR_TEST_SUBJ_FILE.getName());
   
@@ -70,7 +70,7 @@ public class SeriesRegular extends CommonFixture {
      */
     @Test(description = "Implements Conformance test A.43: Verify conformance via JSON schema (/conf/series-regular-encoding-json/definition)")
     public void validateBySeriesRegularSchema() {
-    	System.out.println("validateBySeriesRegularSchema() "+testSubject);
+    	
     	
     	if(!testSubject.isFile()) {
     		Assert.assertTrue(testSubject.isFile(),"No file selected");

@@ -45,7 +45,7 @@ public class Advanced extends CommonFixture {
      */
     @BeforeClass
     public void obtainTestSubject(ITestContext testContext) {
-    	System.out.println("obtainTestSubject");
+    	
         Object obj = testContext.getSuite().getAttribute(
                 SuiteAttribute.ADVANCED_TEST_SUBJ_FILE.getName());
   
@@ -70,7 +70,7 @@ public class Advanced extends CommonFixture {
      */
     @Test(description = "Implements Conformance test A.40: Verify conformance via JSON schema (/conf/advanced-encoding-json/definition)")
     public void validateByAdvancedSchema() {
-    	System.out.println("validateByAdvancedSchema() "+testSubject);
+    
     	
     	if(!testSubject.isFile()) {
     		Assert.assertTrue(testSubject.isFile(),"No file selected");

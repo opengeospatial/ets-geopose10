@@ -45,7 +45,7 @@ public class Graph extends CommonFixture {
      */
     @BeforeClass
     public void obtainTestSubject(ITestContext testContext) {
-    	System.out.println("obtainTestSubject");
+    
         Object obj = testContext.getSuite().getAttribute(
                 SuiteAttribute.GRAPH_TEST_SUBJ_FILE.getName());
   
@@ -70,7 +70,7 @@ public class Graph extends CommonFixture {
      */
     @Test(description = "Implements Conformance test A.41: Verify conformance via JSON schema (/conf/graph-encoding-json/definition)")
     public void validateByGraphSchema() {
-    	System.out.println("validateByGraphSchema() "+testSubject);
+    	
     	
     	if(!testSubject.isFile()) {
     		Assert.assertTrue(testSubject.isFile(),"No file selected");

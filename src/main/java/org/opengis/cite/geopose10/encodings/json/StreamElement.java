@@ -45,7 +45,7 @@ public class StreamElement extends CommonFixture {
      */
     @BeforeClass
     public void obtainTestSubject(ITestContext testContext) {
-    	System.out.println("obtainTestSubject");
+    
         Object obj = testContext.getSuite().getAttribute(
                 SuiteAttribute.STREAMELEMENT_TEST_SUBJ_FILE.getName());
   
@@ -70,7 +70,7 @@ public class StreamElement extends CommonFixture {
      */
     @Test(description = "Implements Conformance test A.45: Verify Stream Element conformance to JSON schema (/conf/stream-encoding-json/element)")
     public void validateByStreamElementSchema() {
-    	System.out.println("validateByStreamElementSchema() "+testSubject);
+    
     	
     	if(!testSubject.isFile()) {
     		Assert.assertTrue(testSubject.isFile(),"No file selected");
