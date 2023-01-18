@@ -65,11 +65,11 @@ public class BasicQuaternion extends CommonFixture {
     }
 
     /**
-     * Implements Conformance test A.38: Verify conformance via JSON schema
-     * Validate the JSON data against the strict Basic-Quaternion JSON-Schema 2019-9 definition
+     * Implements Conformance test A.39: Verify conformance via JSON schema
+     * Validate the JSON data against the Basic-Quaternion JSON Schema 2019-9 definition
      * 
      */
-    @Test(description = "Implements Conformance test A.38: Verify conformance via JSON schema (/conf/basic-quaternion-encoding-json/definition)")
+    @Test(description = "Implements Conformance test A.39: Verify conformance via JSON schema (/conf/basic-quaternion-encoding-json/definition)")
     public void validateByBasicQuaternionSchema() {
     	
     	System.out.println("validateByBasicQuaternionSchema() "+testSubject);
