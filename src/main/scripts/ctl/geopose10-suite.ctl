@@ -34,11 +34,15 @@
                <ul>
                  <li><a href="https://docs.ogc.org/dis/21-056r10/21-056r10.html">OGC GeoPose 1.0 Data Exchange Draft Standard (OGC 21-056r10)</a></li>
                </ul>
-               <p>The following conformance tests specified in OGC 21-056r10 are implemented:</p>
+               <p>The following conformance classes from OGC 21-056r10 are implemented:</p>
                <ul>
-                 <li>/conf/basic-ypr-encoding-json/definition, Conformance test A.37</li>
-                 <li>/conf/basic-quaternion-encoding-json/definition, Conformance test A.38</li>
-                 <li>/conf/advanced-encoding-json/definition, Conformance test A.40</li>
+					<li>Basic-YPR SDU JSON, Annex A.5.2.</li>
+					<li>Basic-Quaternion SDU JSON - Permissive, Annex A.5.3.</li>
+					<li>Advanced SDU JSON, Annex A.5.4.</li>
+					<li>Graph SDU JSON, Annex A.5.5.</li>
+					<li>Chain SDU JSON, Annex A.5.6.</li>					
+					<li>Regular Series SDU JSON, Annex A.5.7.</li>
+					<li>Stream SDU JSON, Annex A.5.9.</li>
                </ul>
              </div>
              <fieldset style="background:#ccffff">
