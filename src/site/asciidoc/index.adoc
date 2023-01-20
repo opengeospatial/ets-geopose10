@@ -44,6 +44,24 @@ The general structure of the test suite is shown in Table 1.
 |Advanced
 |org.opengis.cite.geopose10.encodings.json.Advanced
 
+|Chain
+|org.opengis.cite.geopose10.encodings.json.Chain
+
+|Graph
+|org.opengis.cite.geopose10.encodings.json.Graph
+
+|Regular Series
+|org.opengis.cite.geopose10.encodings.json.SeriesRegular
+
+|Stream Element
+|org.opengis.cite.geopose10.encodings.json.StreamElement
+
+|Stream Header
+|org.opengis.cite.geopose10.encodings.json.StreamHeader
+
+|Stream Record
+|org.opengis.cite.geopose10.encodings.json.StreamRecord
+
 |===
 
 The Javadoc documentation provides more detailed information about the test 
@@ -79,5 +97,34 @@ The _Obligation_ descriptor can have the following values: M (mandatory), O (opt
 |O
 |A file to upload
 
+|chain
+|file
+|O
+|A file to upload
+
+|graph
+|file
+|O
+|A file to upload
+
+|seriesregular
+|file
+|O
+|A file to upload
+
+|streamelement
+|file
+|O
+|A file to upload
+
+|streamheader
+|file
+|O
+|A file to upload
+
+|streamrecord
+|file
+|O
+|A file to upload
 
 |===
