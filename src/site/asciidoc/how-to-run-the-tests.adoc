@@ -21,8 +21,16 @@ You can modify the sample file in `src/main/config/test-run-props.xml`
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties version="1.0">
-  <comment>Test run arguments</comment>
-  <entry key="iut">https://host/capabilities</entry>
+    <comment>Sample test run arguments</comment>
+    <entry key="basicypr">file:///Users/dev/resources/sample2_BasicEuler.json</entry>
+    <entry key="basicquaternion">file:///Users/dev/resources/sample3_BasicQuaternion.json</entry>
+    <entry key="advanced">file:///Users/dev/resources/sample4_Advanced.json</entry>
+    <entry key="chain">file:///Users/dev/resources/sample5_Chain.json</entry>
+    <entry key="graph">file:///Users/dev/resources/sample6_Graph.json</entry>
+    <entry key="seriesregular">file:///Users/dev/resources/sample7_SeriesRegular.json</entry>
+    <entry key="streamelement">file:///Users/dev/resources/sample8_StreamElement.json</entry>
+    <entry key="streamheader">file:///Users/dev/resources/sample9_StreamHeader.json</entry>
+    <entry key="streamrecord">file:///Users/dev/resources/sample10_StreamRecord.json</entry>
 </properties>
 ----
 
