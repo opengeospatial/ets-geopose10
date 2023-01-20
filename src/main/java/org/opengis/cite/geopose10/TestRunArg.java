@@ -9,7 +9,16 @@ public enum TestRunArg {
      * An absolute URI that refers to a representation of the test subject or
      * metadata about it.
      */
-    IUT;
+    IUT,
+    STREAMRECORD,
+    STREAMHEADER,
+    STREAMELEMENT,
+    SERIESREGULAR,
+    GRAPH,
+    CHAIN,
+    ADVANCED,
+    BASICQuaternion,
+	BASICYPR;
 
     @Override
     public String toString() {

@@ -57,33 +57,164 @@ public class SuiteFixtureListener implements ISuiteListener {
     void processSuiteParameters(ISuite suite) {
         Map<String, String> params = suite.getXmlSuite().getParameters();
         TestSuiteLogger.log(Level.CONFIG, "Suite parameters\n" + params.toString());
-        String iutParam = params.get(TestRunArg.IUT.toString());
-        if ((null == iutParam) || iutParam.isEmpty()) {
-            throw new IllegalArgumentException("Required test run parameter not found: " + TestRunArg.IUT.toString());
+  
+
+        //------Basic YPR
+        
+        String basicYPRParam = params.get(TestRunArg.BASICYPR.toString());
+        if ((null == basicYPRParam) || basicYPRParam.isEmpty()) {
+            throw new IllegalArgumentException("Required test run parameter not found: " + TestRunArg.BASICYPR.toString());
         }
-        URI iutRef = URI.create(iutParam.trim());
-        File entityFile = null;
+        URI basicYPRRef = URI.create(basicYPRParam.trim());
+        File basicYPREntityFile = null;
         try {
-            entityFile = URIUtils.dereferenceURI(iutRef);
-        } catch (IOException iox) {
-            throw new RuntimeException("Failed to dereference resource located at " + iutRef, iox);
+            basicYPREntityFile = URIUtils.dereferenceURI( basicYPRRef );
+        } catch ( IOException ioxc ) {
+            throw new RuntimeException( "Failed to dereference resource located at " + basicYPRRef, ioxc );
         }
-        TestSuiteLogger.log(Level.FINE, String.format("Wrote test subject to file: %s (%d bytes)",
-                entityFile.getAbsolutePath(), entityFile.length()));
-        suite.setAttribute(SuiteAttribute.TEST_SUBJ_FILE.getName(), entityFile);
-        Document iutDoc = null;
+        TestSuiteLogger.log( Level.FINE, String.format( "Wrote test subject to file: %s (%d bytes)",
+                                                        basicYPREntityFile.getAbsolutePath(), basicYPREntityFile.length() ) );
+        suite.setAttribute(SuiteAttribute.BASICYPR_TEST_SUBJ_FILE.getName(), basicYPREntityFile);
+        
+      //------Basic Quaternion
+
+        String basicQuaternionParam = params.get(TestRunArg.BASICQuaternion.toString());
+        if ((null == basicQuaternionParam) || basicQuaternionParam.isEmpty()) {
+            throw new IllegalArgumentException("Required test run parameter not found: " + TestRunArg.BASICQuaternion.toString());
+        }
+        URI basicQuaternionRef = URI.create(basicQuaternionParam.trim());
+        File basicQuaternionEntityFile = null;
         try {
-            iutDoc = URIUtils.parseURI(entityFile.toURI());
-        } catch (Exception x) {
-            throw new RuntimeException("Failed to parse resource retrieved from " + iutRef, x);
+            basicQuaternionEntityFile = URIUtils.dereferenceURI( basicQuaternionRef );
+        } catch ( IOException ioxc ) {
+            throw new RuntimeException( "Failed to dereference resource located at " + basicQuaternionRef, ioxc );
         }
-        suite.setAttribute(SuiteAttribute.TEST_SUBJECT.getName(), iutDoc);
-        if (TestSuiteLogger.isLoggable(Level.FINE)) {
-            StringBuilder logMsg = new StringBuilder("Parsed resource retrieved from ");
-            logMsg.append(iutRef).append("\n");
-            logMsg.append(XMLUtils.writeNodeToString(iutDoc));
-            TestSuiteLogger.log(Level.FINE, logMsg.toString());
+        TestSuiteLogger.log( Level.FINE, String.format( "Wrote test subject to file: %s (%d bytes)",
+                                                        basicQuaternionEntityFile.getAbsolutePath(), basicQuaternionEntityFile.length() ) );
+        suite.setAttribute(SuiteAttribute.BASICQUATERNION_TEST_SUBJ_FILE.getName(), basicQuaternionEntityFile);      
+        
+      //------Advanced
+
+        String advancedParam = params.get(TestRunArg.ADVANCED.toString());
+        if ((null == advancedParam) || advancedParam.isEmpty()) {
+            throw new IllegalArgumentException("Required test run parameter not found: " + TestRunArg.ADVANCED.toString());
         }
+        URI advancedRef = URI.create(advancedParam.trim());
+        File advancedEntityFile = null;
+        try {
+            advancedEntityFile = URIUtils.dereferenceURI( advancedRef );
+        } catch ( IOException ioxc ) {
+            throw new RuntimeException( "Failed to dereference resource located at " + advancedRef, ioxc );
+        }
+        TestSuiteLogger.log( Level.FINE, String.format( "Wrote test subject to file: %s (%d bytes)",
+                                                        advancedEntityFile.getAbsolutePath(), advancedEntityFile.length() ) );
+        suite.setAttribute(SuiteAttribute.ADVANCED_TEST_SUBJ_FILE.getName(), advancedEntityFile);    
+        
+      //------Chain
+
+        String chainParam = params.get(TestRunArg.CHAIN.toString());
+        if ((null == chainParam) || chainParam.isEmpty()) {
+            throw new IllegalArgumentException("Required test run parameter not found: " + TestRunArg.CHAIN.toString());
+        }
+        URI chainRef = URI.create(chainParam.trim());
+        File chainEntityFile = null;
+        try {
+            chainEntityFile = URIUtils.dereferenceURI( chainRef );
+        } catch ( IOException ioxc ) {
+            throw new RuntimeException( "Failed to dereference resource located at " + chainRef, ioxc );
+        }
+        TestSuiteLogger.log( Level.FINE, String.format( "Wrote test subject to file: %s (%d bytes)",
+                                                        chainEntityFile.getAbsolutePath(), chainEntityFile.length() ) );
+        suite.setAttribute(SuiteAttribute.CHAIN_TEST_SUBJ_FILE.getName(), chainEntityFile);   
+        
+      //------Graph
+
+        String graphParam = params.get(TestRunArg.GRAPH.toString());
+        if ((null == graphParam) || graphParam.isEmpty()) {
+            throw new IllegalArgumentException("Required test run parameter not found: " + TestRunArg.GRAPH.toString());
+        }
+        URI graphRef = URI.create(graphParam.trim());
+        File graphEntityFile = null;
+        try {
+            graphEntityFile = URIUtils.dereferenceURI( graphRef );
+        } catch ( IOException ioxc ) {
+            throw new RuntimeException( "Failed to dereference resource located at " + graphRef, ioxc );
+        }
+        TestSuiteLogger.log( Level.FINE, String.format( "Wrote test subject to file: %s (%d bytes)",
+                                                        graphEntityFile.getAbsolutePath(), graphEntityFile.length() ) );
+        suite.setAttribute(SuiteAttribute.GRAPH_TEST_SUBJ_FILE.getName(), graphEntityFile);          
+        
+      //------SeriesRegular
+
+        String seriesregularParam = params.get(TestRunArg.SERIESREGULAR.toString());
+        if ((null == seriesregularParam) || seriesregularParam.isEmpty()) {
+            throw new IllegalArgumentException("Required test run parameter not found: " + TestRunArg.SERIESREGULAR.toString());
+        }
+        URI seriesregularRef = URI.create(seriesregularParam.trim());
+        File seriesregularEntityFile = null;
+        try {
+            seriesregularEntityFile = URIUtils.dereferenceURI( seriesregularRef );
+        } catch ( IOException ioxc ) {
+            throw new RuntimeException( "Failed to dereference resource located at " + seriesregularRef, ioxc );
+        }
+        
+        System.out.println(String.format( "Wrote test subject to file: %s (%d bytes)",
+                seriesregularEntityFile.getAbsolutePath(), seriesregularEntityFile.length() ));
+        
+        TestSuiteLogger.log( Level.FINE, String.format( "Wrote test subject to file: %s (%d bytes)",
+                                                        seriesregularEntityFile.getAbsolutePath(), seriesregularEntityFile.length() ) );
+        suite.setAttribute(SuiteAttribute.SERIESREGULAR_TEST_SUBJ_FILE.getName(), seriesregularEntityFile);    
+        
+      //------StreamElement
+
+        String streamelementParam = params.get(TestRunArg.STREAMELEMENT.toString());
+        if ((null == streamelementParam) || streamelementParam.isEmpty()) {
+            throw new IllegalArgumentException("Required test run parameter not found: " + TestRunArg.STREAMELEMENT.toString());
+        }
+        URI streamelementRef = URI.create(streamelementParam.trim());
+        File streamelementEntityFile = null;
+        try {
+            streamelementEntityFile = URIUtils.dereferenceURI( streamelementRef );
+        } catch ( IOException ioxc ) {
+            throw new RuntimeException( "Failed to dereference resource located at " + streamelementRef, ioxc );
+        }
+        TestSuiteLogger.log( Level.FINE, String.format( "Wrote test subject to file: %s (%d bytes)",
+                                                        streamelementEntityFile.getAbsolutePath(), streamelementEntityFile.length() ) );
+        suite.setAttribute(SuiteAttribute.STREAMELEMENT_TEST_SUBJ_FILE.getName(), streamelementEntityFile);  
+        
+      //------StreamHeader
+
+        String streamheaderParam = params.get(TestRunArg.STREAMHEADER.toString());
+        if ((null == streamheaderParam) || streamheaderParam.isEmpty()) {
+            throw new IllegalArgumentException("Required test run parameter not found: " + TestRunArg.STREAMHEADER.toString());
+        }
+        URI streamheaderRef = URI.create(streamheaderParam.trim());
+        File streamheaderEntityFile = null;
+        try {
+            streamheaderEntityFile = URIUtils.dereferenceURI( streamheaderRef );
+        } catch ( IOException ioxc ) {
+            throw new RuntimeException( "Failed to dereference resource located at " + streamheaderRef, ioxc );
+        }
+        TestSuiteLogger.log( Level.FINE, String.format( "Wrote test subject to file: %s (%d bytes)",
+                                                        streamheaderEntityFile.getAbsolutePath(), streamheaderEntityFile.length() ) );
+        suite.setAttribute(SuiteAttribute.STREAMHEADER_TEST_SUBJ_FILE.getName(), streamheaderEntityFile);  
+        
+      //------StreamRecord
+
+        String streamrecordParam = params.get(TestRunArg.STREAMRECORD.toString());
+        if ((null == streamrecordParam) || streamrecordParam.isEmpty()) {
+            throw new IllegalArgumentException("Required test run parameter not found: " + TestRunArg.STREAMRECORD.toString());
+        }
+        URI streamrecordRef = URI.create(streamrecordParam.trim());
+        File streamrecordEntityFile = null;
+        try {
+            streamrecordEntityFile = URIUtils.dereferenceURI( streamrecordRef );
+        } catch ( IOException ioxc ) {
+            throw new RuntimeException( "Failed to dereference resource located at " + streamrecordRef, ioxc );
+        }
+        TestSuiteLogger.log( Level.FINE, String.format( "Wrote test subject to file: %s (%d bytes)",
+                                                        streamrecordEntityFile.getAbsolutePath(), streamrecordEntityFile.length() ) );
+        suite.setAttribute(SuiteAttribute.STREAMRECORD_TEST_SUBJ_FILE.getName(), streamrecordEntityFile);           
     }
 
     /**

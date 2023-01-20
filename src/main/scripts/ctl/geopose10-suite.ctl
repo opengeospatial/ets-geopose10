@@ -32,39 +32,78 @@
              <div style="background:#F0F8FF" bgcolor="#F0F8FF">
                <p>The implementation under test (IUT) is checked against the following specifications:</p>
                <ul>
-                 <li><a href="http://www.w3.org/TR/xml/">Extensible Markup Language (XML) 1.0</a>, 
-				 Fifth Edition</li>
-				 <li><a href="http://www.w3.org/TR/xmlbase/">XML Base</a>, Second Edition</li>
+                 <li><a href="https://docs.ogc.org/dis/21-056r10/21-056r10.html">OGC GeoPose 1.0 Data Exchange Draft Standard (OGC 21-056r10)</a></li>
                </ul>
-               <p>Two conformance levels are defined:</p>
+               <p>The following conformance classes from OGC 21-056r10 are implemented:</p>
                <ul>
-                 <li>Level 1</li>
-                 <li>Level 2</li>
+					<li>Basic-YPR SDU JSON, Annex A.5.2.</li>
+					<li>Basic-Quaternion SDU JSON - Permissive, Annex A.5.3.</li>
+					<li>Advanced SDU JSON, Annex A.5.4.</li>
+					<li>Graph SDU JSON, Annex A.5.5.</li>
+					<li>Chain SDU JSON, Annex A.5.6.</li>					
+					<li>Regular Series SDU JSON, Annex A.5.7.</li>
+					<li>Stream SDU JSON, Annex A.5.9.</li>
                </ul>
              </div>
              <fieldset style="background:#ccffff">
                <legend style="font-family: sans-serif; color: #000099; 
 			                 background-color:#F0F8FF; border-style: solid; 
                        border-width: medium; padding:4px">Implementation under test</legend>
+
                <p>
-                 <label for="uri">
-                   <h4 style="margin-bottom: 0.5em">Location of IUT (absolute http: or file: URI)</h4>
+                 <label for="doc_basicypr">
+                   <h4 style="margin-bottom: 0.5em">Upload Basic YPR file</h4>
                  </label>
-                 <input id="uri" name="uri" size="128" type="text" value="http://www.w3schools.com/xml/note.xml" />
+                 <input name="doc_basicypr" id="doc_basicypr" size="128" type="file" />
                </p>
-               <p>
-                 <label for="doc">
-                   <h4 style="margin-bottom: 0.5em">Upload IUT</h4>
-                 </label>
-                 <input name="doc" id="doc" size="128" type="file" />
-               </p>
-               <p>
-                 <label for="level">Conformance class: </label>
-                 <input id="level-1" type="radio" name="level" value="1" checked="checked" />
-                 <label for="level-1"> Level 1 | </label>
-                 <input id="level-2" type="radio" name="level" value="2" />
-                 <label class="form-label" for="level-2"> Level 2</label>
-               </p>
+				<p>
+				  <label for="doc_basicquaternion">
+				    <h4 style="margin-bottom: 0.5em">Upload Basic Quaternion file</h4>
+				  </label>
+				  <input name="doc_basicquaternion" id="doc_basicquaternion" size="128" type="file" />
+				</p>     
+				<p>
+				  <label for="doc_advanced">
+				    <h4 style="margin-bottom: 0.5em">Upload Advanced file</h4>
+				  </label>
+				  <input name="doc_advanced" id="doc_advanced" size="128" type="file" />
+				</p>
+				<p>
+				  <label for="doc_chain">
+				    <h4 style="margin-bottom: 0.5em">Upload Chain file</h4>
+				  </label>
+				  <input name="doc_chain" id="doc_chain" size="128" type="file" />
+				</p>								          
+				<p>
+				  <label for="doc_graph">
+				    <h4 style="margin-bottom: 0.5em">Upload Graph file</h4>
+				  </label>
+				  <input name="doc_graph" id="doc_graph" size="128" type="file" />
+				</p>	
+				<p>
+				  <label for="doc_seriesregular">
+				    <h4 style="margin-bottom: 0.5em">Upload Regular Series file</h4>
+				  </label>
+				  <input name="doc_seriesregular" id="doc_seriesregular" size="128" type="file" />
+				</p>		
+				<p>
+  					<label for="doc_streamelement">
+    				<h4 style="margin-bottom: 0.5em">Upload Stream Element file</h4>
+  					</label>
+  					<input name="doc_streamelement" id="doc_streamelement" size="128" type="file" />
+				</p>	
+				<p>
+				    <label for="doc_streamheader">
+				    <h4 style="margin-bottom: 0.5em">Upload Stream Header file</h4>
+				    </label>
+				    <input name="doc_streamheader" id="doc_streamheader" size="128" type="file" />
+				</p>	
+				<p>
+				  <label for="doc_streamrecord">
+				    <h4 style="margin-bottom: 0.5em">Upload Stream Record file</h4>
+				  </label>
+				  <input name="doc_streamrecord" id="doc_streamrecord" size="128" type="file" />
+				</p>								
              </fieldset>
              <p>
                <input class="form-button" type="submit" value="Start"/> | 
@@ -72,19 +111,26 @@
              </p>
            </ctl:form>
         </xsl:variable>
-        <xsl:variable name="iut-file" select="$form-data//value[@key='doc']/ctl:file-entry/@full-path" />
+        <xsl:variable name="iut-file-basicypr" select="$form-data//value[@key='doc_basicypr']/ctl:file-entry/@full-path" />
+        <xsl:variable name="iut-file-basicquaternion" select="$form-data//value[@key='doc_basicquaternion']/ctl:file-entry/@full-path" />
+        <xsl:variable name="iut-file-advanced" select="$form-data//value[@key='doc_advanced']/ctl:file-entry/@full-path" />
+        <xsl:variable name="iut-file-chain" select="$form-data//value[@key='doc_chain']/ctl:file-entry/@full-path" />
+        <xsl:variable name="iut-file-graph" select="$form-data//value[@key='doc_graph']/ctl:file-entry/@full-path" />     
+        <xsl:variable name="iut-file-seriesregular" select="$form-data//value[@key='doc_seriesregular']/ctl:file-entry/@full-path" />   
+        <xsl:variable name="iut-file-streamelement" select="$form-data//value[@key='doc_streamelement']/ctl:file-entry/@full-path" /> 
+		<xsl:variable name="iut-file-streamheader" select="$form-data//value[@key='doc_streamheader']/ctl:file-entry/@full-path" />  
+		<xsl:variable name="iut-file-streamrecord" select="$form-data//value[@key='doc_streamrecord']/ctl:file-entry/@full-path" />		       
 	      <xsl:variable name="test-run-props">
 		    <properties version="1.0">
-          <entry key="iut">
-            <xsl:choose>
-              <xsl:when test="empty($iut-file)">
-                <xsl:value-of select="normalize-space($form-data/values/value[@key='uri'])"/>
-              </xsl:when>
-              <xsl:otherwise>
-                <xsl:copy-of select="concat('file:///', $iut-file)" />
-              </xsl:otherwise>
-            </xsl:choose>
-          </entry>
+          <entry key="basicypr"><xsl:copy-of select="concat('file:///', $iut-file-basicypr)" /></entry>
+          <entry key="basicquaternion"><xsl:copy-of select="concat('file:///', $iut-file-basicquaternion)" /></entry>
+          <entry key="advanced"><xsl:copy-of select="concat('file:///', $iut-file-advanced)" /></entry>
+          <entry key="chain"><xsl:copy-of select="concat('file:///', $iut-file-chain)" /></entry>
+          <entry key="graph"><xsl:copy-of select="concat('file:///', $iut-file-graph)" /></entry>  
+          <entry key="seriesregular"><xsl:copy-of select="concat('file:///', $iut-file-seriesregular)" /></entry>     
+          <entry key="streamelement"><xsl:copy-of select="concat('file:///', $iut-file-streamelement)" /></entry>   
+          <entry key="streamheader"><xsl:copy-of select="concat('file:///', $iut-file-streamheader)" /></entry>  
+          <entry key="streamrecord"><xsl:copy-of select="concat('file:///', $iut-file-streamrecord)" /></entry>
           <entry key="ics"><xsl:value-of select="$form-data/values/value[@key='level']"/></entry>
 		    </properties>
 		   </xsl:variable>

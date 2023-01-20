@@ -1,0 +1,10 @@
+{
+  "streamElement": {
+    "frame": {
+      "authority": "/geopose/1.0",
+      "id": "RotateTranslate",
+      "parameters": "translation=[0.0, 0.0, 0.0]&rotation=[0.73422, -0.25137, -0.20427, 0.59666]"
+    },
+    "validTime": 1673956818007
+  }
+}

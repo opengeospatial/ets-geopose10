@@ -10,13 +10,41 @@
     <listener class-name="org.opengis.cite.geopose10.TestFailureListener" />
   </listeners>
 
-  <test name="Conformance Level 1">
-    <packages>
-      <package name="org.opengis.cite.geopose10.level1" />
-    </packages>
+  <test name="Basic-YPR SDU JSON">
     <classes>
-      <class name="org.opengis.cite.geopose10.SuitePreconditions" />
+      <class name="org.opengis.cite.geopose10.encodings.json.BasicYPR" />
     </classes>
   </test>
-  <!-- Add test sets for other conformance classes/levels -->
+  <test name="Basic-Quaternion SDU JSON - Permissive">
+    <classes>
+      <class name="org.opengis.cite.geopose10.encodings.json.BasicQuaternion" />
+    </classes>
+  </test>
+  <test name="Advanced SDU JSON">
+    <classes>
+      <class name="org.opengis.cite.geopose10.encodings.json.Advanced" />
+    </classes>
+  </test>  
+  <test name="Chain SDU JSON">
+    <classes>
+      <class name="org.opengis.cite.geopose10.encodings.json.Chain" />
+    </classes>
+  </test>   
+  <test name="Graph SDU JSON">
+    <classes>
+      <class name="org.opengis.cite.geopose10.encodings.json.Graph" />
+    </classes>
+  </test>    
+  <test name="Regular Series SDU JSON">
+    <classes>
+      <class name="org.opengis.cite.geopose10.encodings.json.SeriesRegular" />
+    </classes>
+  </test>   
+  <test name="Stream SDU JSON">
+    <classes>
+     <class name="org.opengis.cite.geopose10.encodings.json.StreamElement" />
+     <class name="org.opengis.cite.geopose10.encodings.json.StreamHeader" />
+     <class name="org.opengis.cite.geopose10.encodings.json.StreamRecord" />
+  </classes>
+</test>   
 </suite>

@@ -24,7 +24,17 @@ public enum SuiteAttribute {
     /**
      * A File containing the test subject or a description of it.
      */
-    TEST_SUBJ_FILE("testSubjectFile", File.class);
+    TEST_SUBJ_FILE("testSubjectFile", File.class),
+    STREAMRECORD_TEST_SUBJ_FILE("streamRecordTestSubjectFile", File.class),
+    STREAMHEADER_TEST_SUBJ_FILE("streamHeaderTestSubjectFile", File.class), 
+    STREAMELEMENT_TEST_SUBJ_FILE("streamElementTestSubjectFile", File.class),  
+    SERIESREGULAR_TEST_SUBJ_FILE("seriesRegularTestSubjectFile", File.class),  
+    GRAPH_TEST_SUBJ_FILE("graphTestSubjectFile", File.class),    
+    CHAIN_TEST_SUBJ_FILE("chainTestSubjectFile", File.class),    
+    ADVANCED_TEST_SUBJ_FILE("advancedTestSubjectFile", File.class),    
+    BASICQUATERNION_TEST_SUBJ_FILE("basicQuaternionTestSubjectFile", File.class),
+    BASICYPR_TEST_SUBJ_FILE("basicYPRTestSubjectFile", File.class);
+	
     private final Class attrType;
     private final String attrName;
 
