@@ -75,7 +75,7 @@ public class BasicQuaternion extends CommonFixture {
     
     	
     	if(!testSubject.isFile()) {
-    		Assert.assertTrue(testSubject.isFile(),"No file selected");
+    		Assert.assertTrue(testSubject.isFile(),"No file selected. ");
     	}
     	
     	StringBuffer errorMessages = new StringBuffer();
