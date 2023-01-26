@@ -49,18 +49,19 @@
   <properties>
     <ets-code>geopose10</ets-code>
     <spec-version>1.0</spec-version>
-    <docker.teamengine.version>5.4</docker.teamengine.version>
+    <docker.teamengine.version>5.5.2</docker.teamengine.version>
   </properties>
 
   <dependencies>
-<dependency>
-    <groupId>com.networknt</groupId>
-    <artifactId>json-schema-validator</artifactId>
-    <version>1.0.76</version>
-</dependency>  
+    <dependency>
+      <groupId>com.networknt</groupId>
+      <artifactId>json-schema-validator</artifactId>
+      <version>1.0.76</version>
+    </dependency>  
     <dependency>
       <groupId>org.opengis.cite.teamengine</groupId>
       <artifactId>teamengine-spi</artifactId>
+      <version>5.5.2</version>
     </dependency>
     <dependency>
       <groupId>org.opengis.cite</groupId>
