@@ -73,7 +73,7 @@ public class SeriesRegular extends CommonFixture {
     	
     	
     	if(!testSubject.isFile()) {
-    		Assert.assertTrue(testSubject.isFile(),"No file selected");
+    		Assert.assertTrue(testSubject.isFile(),"No file selected. ");
     	}
     	
     	BaseJsonSchemaValidatorTest tester = new BaseJsonSchemaValidatorTest();
