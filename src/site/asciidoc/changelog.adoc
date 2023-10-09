@@ -1,5 +1,9 @@
 = Release Notes
 
+== 0.2 (2023-10-09)
+
+- https://github.com/opengeospatial/ets-geopose10/issues/17[Update documentation to reference the approved standard]
+
 == 0.1 (2023-01-20)
 
 - https://github.com/opengeospatial/ets-geopose10/issues/8[Implement Stream SDU JSON conformance class]

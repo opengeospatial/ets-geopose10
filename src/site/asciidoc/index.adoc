@@ -2,9 +2,9 @@
 
 == Scope
 
-This executable test suite (ETS) verifies the conformance of the implementation under test (IUT) with respect to the OGC GeoPose 1.0 Data Exchange Draft Standard. Conformance testing is a kind of "black box" testing that examines the externally visible characteristics or behaviors of the IUT while disregarding any implementation details.
+This executable test suite (ETS) verifies the conformance of the implementation under test (IUT) with respect to the OGC GeoPose 1.0 Data Exchange Standard. Conformance testing is a kind of "black box" testing that examines the externally visible characteristics or behaviors of the IUT while disregarding any implementation details.
 
-The following conformance classes from OGC 21-056r10 are implemented:
+The following conformance classes from OGC 21-056r11 are implemented:
 
 * Basic-YPR SDU JSON, Annex A.5.2.
 * Basic-Quaternion SDU JSON - Permissive, Annex A.5.3.
@@ -19,7 +19,7 @@ The following conformance classes from OGC 21-056r10 are implemented:
 The documents listed below stipulate requirements that must be satisfied by a 
 conforming implementation.
 
-1. https://docs.ogc.org/dis/21-056r10/21-056r10.html[OGC GeoPose 1.0 Data Exchange Draft Standard (OGC 21-056r10)]
+1. https://docs.ogc.org/is/21-056r11/21-056r11.html[OGC GeoPose 1.0 Data Exchange Standard (OGC 21-056r11)]
 
 
 == Test suite structure
