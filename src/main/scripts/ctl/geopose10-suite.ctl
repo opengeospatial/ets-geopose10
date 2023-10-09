@@ -32,9 +32,9 @@
              <div style="background:#F0F8FF" bgcolor="#F0F8FF">
                <p>The implementation under test (IUT) is checked against the following specifications:</p>
                <ul>
-                 <li><a href="https://docs.ogc.org/dis/21-056r10/21-056r10.html">OGC GeoPose 1.0 Data Exchange Draft Standard (OGC 21-056r10)</a></li>
+                 <li><a href="https://docs.ogc.org/is/21-056r11/21-056r11.html">OGC GeoPose 1.0 Data Exchange Standard (OGC 21-056r11)</a></li>
                </ul>
-               <p>The following conformance classes from OGC 21-056r10 are implemented:</p>
+               <p>The following conformance classes from OGC 21-056r11 are implemented:</p>
                <ul>
 					<li>Basic-YPR SDU JSON, Annex A.5.2.</li>
 					<li>Basic-Quaternion SDU JSON - Permissive, Annex A.5.3.</li>
