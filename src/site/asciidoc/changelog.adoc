@@ -1,7 +1,8 @@
 = Release Notes
 
-== 0.2 (2023-10-09)
+== 1.0 (2023-10-12)
 
+- https://github.com/opengeospatial/ets-geopose10/pull/18[Set status of test suite to Final]
 - https://github.com/opengeospatial/ets-geopose10/issues/17[Update documentation to reference the approved standard]
 
 == 0.1 (2023-01-20)
