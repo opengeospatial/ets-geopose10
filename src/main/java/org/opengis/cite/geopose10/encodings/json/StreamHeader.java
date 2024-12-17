@@ -32,82 +32,83 @@ import com.networknt.schema.SpecVersion;
 import com.networknt.schema.SpecVersionDetector;
 import com.networknt.schema.ValidationMessage;
 
+/**
+ * <p>
+ * StreamHeader class.
+ * </p>
+ *
+ */
 public class StreamHeader extends CommonFixture {
-    private File testSubject;
 
-    /**
-     * Obtains the test subject from the ISuite context. The suite attribute
-     * {@link org.opengis.cite.geopose10.SuiteAttribute#TEST_SUBJECT} should
-     * evaluate to a DOM Document node.
-     * 
-     * @param testContext
-     *            The test (group) context.
-     */
-    @BeforeClass
-    public void obtainTestSubject(ITestContext testContext) {
-   
-        Object obj = testContext.getSuite().getAttribute(
-                SuiteAttribute.STREAMHEADER_TEST_SUBJ_FILE.getName());
-  
-        this.testSubject = (File) obj;
-        
-    }
+	private File testSubject;
 
-    /**
-     * Sets the test subject. This method is intended to facilitate unit
-     * testing.
-     *
-     * @param testSubject A Document node representing the test subject or
-     * metadata about it.
-     */
-    public void setTestSubject(File testSubject) {
-        this.testSubject = testSubject;
-    }
+	/**
+	 * Obtains the test subject from the ISuite context. The suite attribute
+	 * {@link org.opengis.cite.geopose10.SuiteAttribute#TEST_SUBJECT} should evaluate to a
+	 * DOM Document node.
+	 * @param testContext The test (group) context.
+	 */
+	@BeforeClass
+	public void obtainTestSubject(ITestContext testContext) {
 
-    /**
-     * Implements Conformance test A.42: Verify conformance via JSON schema
-     * Validate the JSON data against the GeoPose StreamHeader JSON-Schema 2019-9 definition 
-     */
-    @Test(description = "Implements Conformance test A.42: Verify conformance via JSON schema (/conf/stream-encoding-json/header)")
-    public void validateByStreamHeaderSchema() {
-    	
-    	
-    	if(!testSubject.isFile()) {
-    		Assert.assertTrue(testSubject.isFile(),"No file selected. ");
-    	}
-    	
-    	BaseJsonSchemaValidatorTest tester = new BaseJsonSchemaValidatorTest();
-	      String schemaToApply = "/org/opengis/cite/geopose10/jsonschema/GeoPose.Composite.Sequence.StreamHeader.Schema.json";
-	  	
-	        boolean valid = false;
-	        StringBuffer sb = new StringBuffer();
+		Object obj = testContext.getSuite().getAttribute(SuiteAttribute.STREAMHEADER_TEST_SUBJ_FILE.getName());
 
-	        InputStream inputStream = tester.getClass()
-	                .getResourceAsStream(schemaToApply);
-		
-	        try {
-		      JsonNode schemaNode = tester.getJsonNodeFromStringContent(tester.otherConvertInputStreamToString(inputStream));
-		          JsonSchema schema = tester.getJsonSchemaFromJsonNodeAutomaticVersion(schemaNode);
-		          
-		          schema.initializeValidators(); 
-		          
-		          JsonNode node = tester.getJsonNodeFromStringContent(tester.otherConvertInputStreamToString(new FileInputStream(testSubject)));
-		          Set<ValidationMessage> errors = schema.validate(node);
-		        
-		
-		        
-				Iterator it = errors.iterator();
-				while(it.hasNext())
-				{
-					sb.append(" "+it.next()+".\n");
-	
-				}
-				
-		} catch (IOException e) {
+		this.testSubject = (File) obj;
+
+	}
+
+	/**
+	 * Sets the test subject. This method is intended to facilitate unit testing.
+	 * @param testSubject A Document node representing the test subject or metadata about
+	 * it.
+	 */
+	public void setTestSubject(File testSubject) {
+		this.testSubject = testSubject;
+	}
+
+	/**
+	 * Implements Conformance test A.42: Verify conformance via JSON schema Validate the
+	 * JSON data against the GeoPose StreamHeader JSON-Schema 2019-9 definition
+	 */
+	@Test(description = "Implements Conformance test A.42: Verify conformance via JSON schema (/conf/stream-encoding-json/header)")
+	public void validateByStreamHeaderSchema() {
+
+		if (!testSubject.isFile()) {
+			Assert.assertTrue(testSubject.isFile(), "No file selected. ");
+		}
+
+		BaseJsonSchemaValidatorTest tester = new BaseJsonSchemaValidatorTest();
+		String schemaToApply = "/org/opengis/cite/geopose10/jsonschema/GeoPose.Composite.Sequence.StreamHeader.Schema.json";
+
+		boolean valid = false;
+		StringBuffer sb = new StringBuffer();
+
+		InputStream inputStream = tester.getClass().getResourceAsStream(schemaToApply);
+
+		try {
+			JsonNode schemaNode = tester
+				.getJsonNodeFromStringContent(tester.otherConvertInputStreamToString(inputStream));
+			JsonSchema schema = tester.getJsonSchemaFromJsonNodeAutomaticVersion(schemaNode);
+
+			schema.initializeValidators();
+
+			JsonNode node = tester
+				.getJsonNodeFromStringContent(tester.otherConvertInputStreamToString(new FileInputStream(testSubject)));
+			Set<ValidationMessage> errors = schema.validate(node);
+
+			Iterator it = errors.iterator();
+			while (it.hasNext()) {
+				sb.append(" " + it.next() + ".\n");
+
+			}
+
+		}
+		catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-	        Assert.assertTrue(sb.toString().length()==0,sb.toString());
-    }
+		Assert.assertTrue(sb.toString().length() == 0, sb.toString());
+	}
+
 }
