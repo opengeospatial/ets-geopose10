@@ -1,35 +1,22 @@
 package org.opengis.cite.geopose10.encodings.json;
 
-import org.opengis.cite.geopose10.BaseJsonSchemaValidatorTest;
-import org.opengis.cite.geopose10.CommonFixture;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
 import java.util.Iterator;
 import java.util.Set;
 
+import org.opengis.cite.geopose10.BaseJsonSchemaValidatorTest;
 import org.opengis.cite.geopose10.CommonFixture;
-import org.opengis.cite.geopose10.ErrorMessage;
-import org.opengis.cite.geopose10.ErrorMessageKeys;
 import org.opengis.cite.geopose10.SuiteAttribute;
-import org.opengis.cite.geopose10.util.Samples;
-import org.opengis.cite.validation.RelaxNGValidator;
-import org.opengis.cite.validation.ValidationErrorHandler;
 import org.testng.Assert;
 import org.testng.ITestContext;
-import org.testng.SkipException;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.networknt.schema.JsonSchemaFactory;
 import com.networknt.schema.JsonSchema;
-import com.networknt.schema.SpecVersion;
-import com.networknt.schema.SpecVersionDetector;
 import com.networknt.schema.ValidationMessage;
 
 /**

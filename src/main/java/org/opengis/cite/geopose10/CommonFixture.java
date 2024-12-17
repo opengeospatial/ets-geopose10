@@ -4,7 +4,6 @@ import java.net.URI;
 import java.util.Map;
 
 import org.glassfish.jersey.client.ClientRequest;
-import org.glassfish.jersey.client.ClientResponse;
 import org.opengis.cite.geopose10.util.ClientUtils;
 import org.testng.ITestContext;
 import org.testng.annotations.BeforeClass;
