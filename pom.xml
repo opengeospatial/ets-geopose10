@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <parent>
     <groupId>org.opengis.cite</groupId>
@@ -13,17 +14,17 @@
 
   <name>GeoPose 1.0 Conformance Test Suite</name>
   <description>Describe purpose of test suite.</description>
-  <url>http://opengeospatial.github.io/ets-geopose10/</url>
+  <url>https://opengeospatial.github.io/ets-geopose10/</url>
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
-      <url>http://opensource.org/licenses/Apache-2.0</url>
+      <url>https://opensource.org/licenses/Apache-2.0</url>
     </license>
   </licenses>
 
   <organization>
     <name>Open Geospatial Consortium</name>
-    <url>http://www.opengeospatial.org/</url>
+    <url>https://www.ogc.org/</url>
   </organization>
   <scm>
     <connection>scm:git:https://github.com/opengeospatial/ets-geopose10.git</connection>
@@ -37,9 +38,8 @@
   </issueManagement>
   <developers>
     <developer>
-      <name>Alpha Beta</name>
-      <url>https://github.com/</url>
-      <timezone>UTC</timezone>
+      <name>Dirk Stenger</name>
+      <url>https://github.com/dstenger</url>
     </developer>
   </developers>
 
@@ -48,7 +48,7 @@
     <spec-version>1.0</spec-version>
   </properties>
 
-  <dependencies>     
+  <dependencies>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
@@ -72,7 +72,7 @@
     <dependency>
       <groupId>com.networknt</groupId>
       <artifactId>json-schema-validator</artifactId>
-    </dependency>  
+    </dependency>
     <dependency>
       <groupId>org.opengis.cite.teamengine</groupId>
       <artifactId>teamengine-spi</artifactId>
@@ -105,22 +105,13 @@
               <mainClass>org.opengis.cite.geopose10.TestNGController</mainClass>
             </manifest>
           </archive>
-          <descriptors>
-            <descriptor>${basedir}/src/assembly/deps.xml</descriptor>
-            <descriptor>${basedir}/src/assembly/ctl-scripts.xml</descriptor>
-            <descriptor>${basedir}/src/assembly/aio.xml</descriptor>
-          </descriptors>
         </configuration>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-          </execution>
-        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-scm-publish-plugin</artifactId>
       </plugin>
     </plugins>
+
     <pluginManagement>
       <plugins>
         <plugin>
@@ -129,28 +120,6 @@
           <configuration>
             <images>
               <image>
-                <name>ogccite/${project.artifactId}</name>
-                <build>
-                  <dockerFileDir>${project.basedir}/src/docker</dockerFileDir>
-                  <tags>
-                    <tag>${project.version}-teamengine-${teamengine.version}</tag>
-                  </tags>
-                  <assembly>
-                    <inline>
-                      <fileSets>
-                        <fileSet>
-                          <directory>${project.build.directory}</directory>
-                          <outputDirectory>.</outputDirectory>
-                          <includes>
-                            <include>dependency/*teamengine-*.war</include>
-                            <include>dependency/*teamengine-*.zip</include>
-                            <include>*ets-*.zip</include>
-                          </includes>
-                        </fileSet>
-                      </fileSets>
-                    </inline>
-                  </assembly>
-                </build>
                 <run>
                   <ports>
                     <port>8081:8080</port>
@@ -209,10 +178,6 @@
   </profiles>
 
   <distributionManagement>
-    <repository>
-      <id>sonatype-nexus-staging</id>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </repository>
     <site>
       <id>site</id>
       <url>scm:git:git@github.com:opengeospatial/ets-geopose10.git</url>
