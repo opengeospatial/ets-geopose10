@@ -1,5 +1,11 @@
 = Release Notes
 
+== 1.1 (2025-01-08)
+
+Attention: Java 17 and Tomcat 10.1 are required.
+
+- https://github.com/opengeospatial/ets-geopose10/issues/20[Migrate test suite to TEAM Engine 6 (Java 17)]
+
 == 1.0 (2023-10-12)
 
 - https://github.com/opengeospatial/ets-geopose10/pull/18[Set status of test suite to Final]
